@@ -1,0 +1,10 @@
+﻿[*.vb]
+
+# BC42303: XML comment cannot appear within a method or a property
+dotnet_diagnostic.BC42303.severity = none
+
+# BC42312: XML documentation comments must precede member or type declarations
+dotnet_diagnostic.BC42312.severity = none
+
+# BC42300: XML comment block must immediately precede the language element to which it applies
+dotnet_diagnostic.BC42300.severity = none

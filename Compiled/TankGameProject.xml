@@ -1,0 +1,204 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+TankGameProject
+</name>
+</assembly>
+<members>
+<member name="T:TankGameProject.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:TankGameProject.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:TankGameProject.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:TankGameProject.BoundingBox.Centre">
+                         Properties                          '''
+</member>
+<member name="M:TankGameProject.BoundingBox.CheckIntersection(TankGameProject.BoundingBox@,TankGameProject.BoundingBox@)">
+                         Collisions                          '''
+</member>
+<member name="F:TankGameProject.Camera.AxisX">
+
+ A camera tells DirectX where to render objects and with what perspective.
+
+</member>
+<member name="F:TankGameProject.Collidable._myBoundingBox">
+
+ A collidable object is a game object with a bounding box that checks for collisions. 
+ Collisions can be tested against a single collidable or and array of them.
+ When testing against an array, the function will return all of the collisions present.
+
+</member>
+<member name="P:TankGameProject.Collidable.myBoundingBox">
+                         Properties                          '''
+</member>
+<member name="M:TankGameProject.Collidable.CheckCollision(TankGameProject.Collidable@,TankGameProject.Collidable@)">
+                         Collisions                          '''
+</member>
+<member name="F:TankGameProject.DirectXModule._defaultMaterial">
+
+ This module allows for easy communication with DirectX9.
+ It handles initialising: lights,
+                           sound,
+                           meshes,
+                           textures,
+                           input devices,
+                           and graphics devices.
+
+</member>
+<member name="F:TankGameProject.Projectile.gravity">
+
+A projectile is a collidable object that follows projectile motion.
+It accelerates downwards at a constant rate. The projectile can be
+stopped from rendering and performing calculations by setting the
+active flag to false.
+
+</member>
+<member name="F:TankGameProject.Tank.myCamera">
+
+A Tank is a collidable object with 4 additional bounding boxes. It also 
+has a camera object, which allows directX to render the surroundings from
+the tank's perspective. A tank can also shoot a bullet.
+
+</member>
+<member name="P:TankGameProject.Tank.Speed">
+                          Properties                         '''
+</member>
+<member name="M:TankGameProject.Tank.Move(System.Double,System.Boolean)">
+                           Movement                          '''
+</member>
+<member name="M:TankGameProject.Tank.Shoot(Microsoft.DirectX.Direct3D.Mesh@,Microsoft.DirectX.Direct3D.Texture@,Microsoft.DirectX.Direct3D.Material,System.Single)">
+                            Shoot                            '''
+</member>
+<member name="M:TankGameProject.Tank.GenerateSideBoundingBoxes">
+                          Collisions                         '''
+</member>
+<member name="P:TankGameProject.GameObject.position">
+                         Properties                          '''
+</member>
+<member name="M:TankGameProject.GameObject.Render">
+                         Rendering                           '''
+</member>
+<member name="M:TankGameProject.GameObject.Dispose">
+                           Disposal                          '''
+</member>
+<member name="F:TankGameProject.MyMatrix._rows">
+
+A MyMatrix object represents a matrix. A matrix is a rectangular array
+of numbers arranged in rows and columns. DirectX9 supports matrices, but
+the highest order matrix is 4x4, meaning it has 4 rows and 4 columns.
+A matrix is used to preform calculations on many values at once.
+If points are stored in a matrix, the convention of X values being stored
+in the first row and the Z values in the last row, is assumed.
+
+</member>
+<member name="F:TankGameProject.MyMatrix._columns">
+
+A MyMatrix object represents a matrix. A matrix is a rectangular array
+of numbers arranged in rows and columns. DirectX9 supports matrices, but
+the highest order matrix is 4x4, meaning it has 4 rows and 4 columns.
+A matrix is used to preform calculations on many values at once.
+If points are stored in a matrix, the convention of X values being stored
+in the first row and the Z values in the last row, is assumed.
+
+</member>
+<member name="P:TankGameProject.MyMatrix.rows">
+                         Properties                          '''
+</member>
+<member name="M:TankGameProject.MyMatrix.GetRow(System.Int32)">
+                         Get/Set                             '''
+</member>
+<member name="M:TankGameProject.MyMatrix.MakeCube(Microsoft.DirectX.Vector3,Microsoft.DirectX.Vector3)">
+                         Geometry                            '''
+</member>
+<member name="M:TankGameProject.MyMatrix.AddVector(TankGameProject.MyMatrix,Microsoft.DirectX.Vector3)">
+                         Basic Maths                         '''
+</member>
+<member name="M:TankGameProject.MyMatrix.RotateAboutX(System.Single)">
+                         Rotations                           '''
+</member>
+<member name="M:TankGameProject.MyMatrix.Convolution(TankGameProject.MyMatrix,TankGameProject.MyMatrix)">
+                         Convolution                         '''
+</member>
+<member name="M:TankGameProject.MyMatrix.MyMatrixToVector3(TankGameProject.MyMatrix)">
+                         Conversions                         '''
+</member>
+<member name="P:TankGameProject.MainMenu.menu">
+                  Manage Current Menu                  '''
+</member>
+<member name="M:TankGameProject.MainMenu.CreateGameBTN_Click(System.Object,System.EventArgs)">
+                       Main Menu                       '''
+</member>
+<member name="M:TankGameProject.MainMenu.GenerateBTN_Click(System.Object,System.EventArgs)">
+                   Create Game Menu                    '''
+</member>
+<member name="M:TankGameProject.MainMenu.IPCodeText_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+                    Join Game Menu                     '''
+</member>
+<member name="M:TankGameProject.MainMenu.StartGameBtn_Click(System.Object,System.EventArgs)">
+                   Start Game Menu                     '''
+</member>
+<member name="M:TankGameProject.MainMenu.ExitBTN_Click(System.Object,System.EventArgs)">
+                  Generic Form Actions                  '''
+</member>
+<member name="F:TankGameProject.NetworkModule.sendToIP">
+
+The network module handles network events.
+It support UDP and TCP connection on ports defined below.
+One listening thread is created for each protocol.
+One sending thread is created for each send request.
+The module also retrieves the IPv4 address of an active network adapter,
+both in dotted-decimal notation and hex notation.
+
+ Everything sent is to be sent in a dataWrapper structure to ease
+ the identification process.
+
+</member>
+<member name="M:TankGameProject.NetworkModule.GetOwnIP">
+                  Get IP Addresses in Different Forms            '''
+</member>
+<member name="M:TankGameProject.NetworkModule.Send(TankGameProject.NetworkModule.dataWrapper)">
+                      Send and Recieve Using TCP                 '''
+</member>
+<member name="M:TankGameProject.NetworkModule.SendUDP(TankGameProject.NetworkModule.dataWrapper)">
+                     Send and Recieve Using UDP                  '''
+</member>
+<member name="M:TankGameProject.NetworkModule.HandleRecievedData(TankGameProject.NetworkModule.dataWrapper@)">
+                      Handle recieved data based on the description of the data wrapper                  '''
+</member>
+<member name="M:TankGameProject.NetworkModule.StopThreads">
+                  Stop the threads runnning in the background - used when closing the program            '''
+</member>
+<member name="F:TankGameProject.Terrain._exponent">
+
+ A Terrain object is a game object that, by the use of a matrix, represents terrain.
+ This matrix should have values between 0.0 and 1.0. The terrain is scaled up by multiplying
+ the values by the max height. Therefore the height of the terrain can vary from 0 to the
+ max height of the terrain.
+
+</member>
+<member name="P:TankGameProject.Terrain.exponent">
+                         Properties                          '''
+</member>
+<member name="M:TankGameProject.Terrain.GenerateMatrix(System.Double,System.Double)">
+                   Terrain Height Generation                 '''
+</member>
+<member name="M:TankGameProject.Terrain.GenerateMesh">
+                        Mesh Generation                      '''
+</member>
+<member name="M:TankGameProject.Terrain.LimitToSide(System.Int32,System.Int32)">
+                      Numberical Operations                  '''
+</member>
+</members>
+</doc>
